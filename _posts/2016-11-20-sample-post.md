@@ -3,7 +3,7 @@ layout: post
 categories: posts
 title: Title Post Sample 
 subtitle: SubTitle This is a test post.
-featured-image: /images/bing.lylares.com-2020-05-22-1080p.jpg
+featured-image: /images/bing.lylares.com-2020-05-22-1080p_min_min.jpg
 tags: [tags sample post]
 date-string: 07 20, 2020
 ---
