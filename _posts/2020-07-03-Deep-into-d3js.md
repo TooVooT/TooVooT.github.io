@@ -1,3 +1,43 @@
+
+
+[Toc]
+## SVG
+可所方式矢量图形SVG使用XML定义图像，浏览器使用每一个点与线打印而不是像素填充。
+svg标记中包含基本的标签与CSS属性描述
+
+        <svg width="10" height="10">
+        <rect x="0" y="0" width="10" height="10" fill="blue" />
+        </svg>
+最常用的标签
+> `text` 创建文本元素
+> `circle/rect/line`创建特定图形
+> `path` 两点之间连线
+> `textpath` 两点之间创建路径并且创建一个链接的文本元素
+> `polygon` 允许创建任意类型的多边形 属性`points=`接受一系列x y坐标,`fill-rule`指定填充规则
+> `polyline`多点连接曲线
+> `g` 单独的一组元素 对元素进行分组 可以指定`id=`区分每一组
+
+坐标从绘图区域左上角开始`(0,0)` 从左到右x从上到下y
+任何SVG元素都可以接受`style`属性 类似HTML标签　
+`style="fill:red"`指定颜色
+`fill-opacity`，背景颜色不透明度
+`stroke`，定义边框颜色
+`stroke-width`，设置边框宽度
+
+如果可以与 SVG 交互（SVG 在 HTML 中是内联的），则可以使用 JavaScript 更改任何 SVG 属性
+
+您可以使用 CSS 更改 SVG 图像的任何样式。SVG 属性可以很容易地在 CSS中 被覆盖，并且它们比 CSS 具有更低的优先级。它们的行为不像具有更高优先级的内联 CSS
+### path
+最强大与最复杂的
+属性`d=`表示方向命令 以特定的方向名称首字母与坐标组成
+`M` 表示移动，它接受一组 x，y 坐标
+`L` 表示直线将绘制到它接受一组 x，y
+`H` 是一条水平线，它只接受 x 坐标
+`V` 是一条垂直线，它只接受 y 坐标
+`Z` 表示关闭路径，并将其放回起始位置
+`A` 表示 Arch，它自己需要一个完整的教程
+`Q` 是一条二次 Bezier 曲线，同样，它自己也需要一个完整的教程
+
 ## D3js
 `D3`可以将数据绑定到选择的`Dom`树上，然后将该数据设置选择`Dom`对象的属性
 基于`CSS`选择器，选择网页中的一个或者多个元素。
@@ -25,8 +65,7 @@
 `.datum()`为HTML元素中的单个元素设置值 
 设置完可以重新选择 重新设置 重新更新
 设置的匿名函数参数一个是数据项对应数值`d`，一个是data中数据的索引`i` `this`表示当前Dom元素的引用
-
-## 教程
+## 操作步骤
 * 1 数据获取 `csv` `json` `Array` 
 * 2 界面尺寸 `width` `height` `margin`
 * 3 选择元素 `body` 
@@ -45,6 +84,39 @@
 * `d3.html()`
 * `d3.svg()`
 #### Selection 选择元素
+* `d3.event` 访问用于交互的当前用户事件
+* `d3.mouse` 获取相对于指定容器的鼠标位置
+* `d3.select` 从当前文档中选择一个元素
+* `d3.selectAll` 从当前文档总选择多个元素
+* `d3.selction` 增强选择器原型
+* `d3.touch` 获取相对指定容器的单点触摸位置
+针对选择的对象进行操作
+* `selection.append` 创建并且添加一个对象
+* `selection.attr` 获取或者设置属性的值
+* `selection.call` 为当前选择调用一个函数
+* `selection.classed` 添加或者移除一个CSS类
+* `selection.data` 计算相关连接时取得或者设置一组元素的数据
+* `.datum`取得或者设置某个元素的连接 不必设置连接
+* `.each` 为每一个选中的元素调用函数
+* `.empty`选择为空则返回true
+* `.enter`为缺失的元素返回占位符
+* `.exit`返回不需要的元素
+* `.filter`基于数据过滤选择
+* `html`取得或者设置innerHTML内容
+* `insert`在已经存在的元素之前插入一个元素
+* `interrupt`如果有过渡效果立即终端
+* `node`返回选择中的第一个节点
+* `on`交互式添加或者移除事件监听器
+* `order`重新排列文档元素
+* `property`取得或者设置行内属性
+* `remove`移除当前元素
+* `select`为每个选中的选择再选择额一个后代元素
+* `selectAll`每个选中的元素选择多个后代元素
+* `size`返回选择的元素数
+* `sort` 基于数据排列文档中的元素
+* `text` 取得或者设置文本内容
+* `tansition` 在选中的元素上开启过渡
+  
 #### Axes 轴
 #### Colors 颜色
 #### Random 
@@ -58,7 +130,6 @@
 * `d3.treemap()`
 * `de.tree()`
 * `d3.cluster()`
-
 #### Scales
 #### Paths 路径
 #### Brushes 选择区域
@@ -85,7 +156,7 @@
 
 
 
-## 布局
+## 常用布局
 * bubble气泡图
 * packing 打包图
 * bunding 捆图

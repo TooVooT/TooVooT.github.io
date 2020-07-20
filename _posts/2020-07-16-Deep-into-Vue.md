@@ -424,10 +424,42 @@ SPA单页面应用路径管理器。其只有一个完整页面，加载页面�
 router-link创建a标签实现导航链接，还可以通过router实例设置导航链接。
 点击该链接之后，会立即把`to=`对应的路径值传递给`router.push()`，这个值可以是一个字符串，可以是一个描述目标位置的对象
 
+    <!-- 字符串 -->
+    <router-link to="home">Home</router-link>
+    <!-- 渲染结果 -->
+    <a href="home">Home</a>
+    
+    <!-- 使用 v-bind 的 JS 表达式 -->
+    <router-link v-bind:to="'home'">Home</router-link>
+    
+    <!-- 不写 v-bind 也可以，就像绑定别的属性一样 -->
+    <router-link :to="'home'">Home</router-link>
+    
+    <!-- 为to属性绑定一个对象 -->
+    <router-link :to="{ path: 'home' }">Home</router-link>
+    
+    <!-- 使用命名的路由 指定查询参数-->
+    < :to="{ name: 'user', params: { userId: 123 }}">User</  router-link>
+    
+    <!-- 带查询参数，下面的结果为 /register?plan=private -->
+    <router-link :to="{ path: 'register', query: { plan: 'private' }}">Register</router-link>    
+
+    当指定replace时候 就不会调用默认的Push() 
+    append属性表示在当前的相对路径上添加基路径
+    tag属性指定将链接渲染为何种标签 默认为a 
+    exact表示精确匹配是否激活
+    event声明触发导航的事件 
 
 ## router-view
 `<router-view></router-view>`为路由出口，根据路由匹配的组件将会在此处渲染。
 可以在一个页面内区分不同的router-view设置不同组件显示的区域
+
+可以配合`<transition>`与`<keep-alive>`使用
+可以通过`name`属性指定视图的名称方便嵌套视图的设计
+
+
+
+
 
 ## `this.route` 与 `this.$router`
 通过在Vue实例中注入路由器，可以在任何组件内部使用`this.$router`访问路由器实例，通过`this.route`访问当前路由。
@@ -529,7 +561,7 @@ router-link创建a标签实现导航链接，还可以通过router实例设置�
 
 ## 滚动行为
 
-
+ 
 # 状态管理
 ## vuex配置
 
