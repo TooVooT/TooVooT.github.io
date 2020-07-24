@@ -76,3 +76,10 @@ date-string: July 15, 2020
     * `Infludb`
     * `ElasticSearch`
     * `Redis`
+
+
+# 前端项目创建
+`vue` `vue-router` `vuex`
+`elementui` `bootstrap`
+`axios` 
+

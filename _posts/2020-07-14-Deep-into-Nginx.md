@@ -9,7 +9,7 @@ date-string: July 14, 2020
 ---
 
 # Nginx 
-HTTP代理
+HTTP服务器
 反向代理
 负载均衡
 缓存处理
